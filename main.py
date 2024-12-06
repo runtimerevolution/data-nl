@@ -1,14 +1,12 @@
 import logging
 import os
 
-import openai
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
 from src.schemas import Message, Request, Response
 
 logging.basicConfig(level=logging.INFO)
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 app = FastAPI(title=os.getenv("API_TITLE"), docs_url="/")
