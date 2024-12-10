@@ -8,8 +8,9 @@ from src.schemas import Message, Request, Response
 
 logging.basicConfig(level=logging.INFO)
 
+API_TITLE = os.getenv("API_TITLE", "Project")
 
-app = FastAPI(title=os.getenv("API_TITLE"), docs_url="/")
+app = FastAPI(title=API_TITLE, docs_url="/")
 
 
 @app.post(
