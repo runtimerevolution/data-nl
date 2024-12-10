@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi[standard]>=0.115.5",
     "llama-index>=0.12.5",
-    "llama-index-vector-stores-postgres>=0.3.3",
     "openai>=1.57.2",
     "ruff>=0.8.2",
+    "llama-index-readers-database>=0.3.0",
 ]
