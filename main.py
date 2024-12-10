@@ -1,6 +1,7 @@
 import logging
 import os
 
+import openai
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
@@ -11,6 +12,8 @@ logging.basicConfig(level=logging.INFO)
 API_TITLE = os.getenv("API_TITLE", "Project")
 
 app = FastAPI(title=API_TITLE, docs_url="/")
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 @app.post(
