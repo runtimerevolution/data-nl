@@ -28,6 +28,6 @@ async def prompt(request_body: Request):
         documents = load_documents(request_body.prompt)
         index = vectorize_documents(documents)
         query_engine = index.as_query_engine()
-        return {"message": query_engine.query(request_body.prompt)}
+        return {"message": query_engine.query(request_body.prompt).__str__()}
     except Exception as e:
         return JSONResponse(status_code=404, content={"message": f"{e}"})
