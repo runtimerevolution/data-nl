@@ -7,6 +7,7 @@
             "source.organizeImports": "always"
         }
     },
+    "python.envFile": "${workspaceFolder}/.env.local",
     "sqltools.connections": [
         {
             "previewLimit": 50,
