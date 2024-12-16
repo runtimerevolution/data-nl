@@ -6,7 +6,8 @@ class Request(BaseModel):
 
 
 class Response(BaseModel):
-    message: str
+    response: str
+    metadata: dict
 
 
 class Message(BaseModel):

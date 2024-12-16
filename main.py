@@ -5,7 +5,7 @@ import openai
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-from src.database_retriever import query_engine
+from src.llama_index import create_query_engine
 from src.schemas import Message, Request, Response
 
 logging.basicConfig(level=logging.INFO)
@@ -23,8 +23,17 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
     response_model=Response,
     responses={404: {"model": Message}},
 )
-async def prompt(request_body: Request):
+def prompt(request_body: Request):
     try:
-        return {"message": query_engine().query(request_body.prompt).__str__()}
+        engine = create_query_engine()
+
+        result = engine.query(request_body.prompt)
+
+        response = {
+            "response": str(result),
+            "metadata": result.metadata,
+        }
+
+        return response
     except Exception as e:
         return JSONResponse(status_code=404, content={"message": f"{e}"})
