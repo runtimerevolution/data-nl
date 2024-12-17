@@ -7,4 +7,17 @@
             "source.organizeImports": "always"
         }
     },
+    "python.envFile": "${workspaceFolder}/.env.local",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 25432,
+            "driver": "PostgreSQL",
+            "name": "WeatherDB",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ],
 }
