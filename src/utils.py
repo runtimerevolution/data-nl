@@ -1,7 +1,6 @@
 import os
 from typing import List
 
-import pandas as pd
 from sqlalchemy import URL, Engine, create_engine, text
 
 
