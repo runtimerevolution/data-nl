@@ -21,7 +21,7 @@ to fill in the necessary environment variables. Below is a table explaining each
 |------------------------|----------------------------------------------------------------------|
 | `API_TITLE`            | The title of your API project.                                       |
 | `OPENAI_API_KEY`       | Your OpenAI API key for accessing OpenAI services.                   |
-| `DATABASE_INIT_FILE`   | The database initialization file to use (`*.tar` or `*.sql`).        |
+| `DB_INIT_FILE`   | The database initialization file to use (`*.tar` or `*.sql`).              |
 | `POSTGRES_USER`        | The username for the PostgreSQL database.                            |
 | `POSTGRES_PASSWORD`    | The password for the PostgreSQL database.                            |
 | `DB_HOST`              | The hostname for the PostgreSQL database.                            |
