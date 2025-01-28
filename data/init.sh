@@ -12,7 +12,7 @@ elif [[ "$DATABASE_INIT_FILE" == *.sql ]]; then
     psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f "/docker-entrypoint-initdb.d/$DATABASE_INIT_FILE"
     echo ">> SQL file executed successfully."
 else
-    echo ">> ERROR: DATABASE_INIT_FILE must be a .sql or .tar file."
+    echo ">> No valid .sql or .tar file specified for DATABASE_INIT_FILE."
 fi
 
 echo ">> Initialization completed successfully."
