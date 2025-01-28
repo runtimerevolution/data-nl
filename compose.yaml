@@ -11,8 +11,10 @@ services:
      - 25432:5432
     restart: always
     volumes:
-      - ./data:/docker-entrypoint-initdb.d/
+      - ./data/init.sh:/docker-entrypoint-initdb.d/init.sh
+      - ./data/${DATABASE_INIT_FILE}:/docker-entrypoint-initdb.d/${DATABASE_INIT_FILE}
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_INIT_FILE=${DATABASE_INIT_FILE}
