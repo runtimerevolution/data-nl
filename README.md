@@ -2,7 +2,7 @@
 
 ## Setup
 
-### 1. Install and sync `uv`, available at [https://github.com/astral-sh/uv](https://github.com/astral-sh/uv)
+### 1. Install and sync [`uv`](https://github.com/astral-sh/uv)
 
 ```bash
 uv sync
